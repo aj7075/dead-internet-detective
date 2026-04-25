@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(pip install *)",
+      "Bash(python -m pytest tests/test_generator.py tests/test_environment.py -v)"
+    ]
+  }
+}
