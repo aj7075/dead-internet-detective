@@ -85,3 +85,4 @@ class State:
     difficulty: str                # "easy" | "medium" | "hard"
     done: bool = False
     accumulated_step_rewards: float = 0.0
+    citation_traced_urls: set = field(default_factory=set)
