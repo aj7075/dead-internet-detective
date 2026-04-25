@@ -41,7 +41,7 @@ _TOOL_REGISTRY: dict = {
 
 class DeadInternetEnvironment(Environment):
 
-    _MAX_STEPS: dict[str, int] = {"easy": 20, "medium": 30, "hard": 40}
+    _MAX_STEPS: dict[str, int] = {"easy": 40, "medium": 60, "hard": 80}
 
     def reset(self, task_id: str = "easy", seed: int | None = None) -> Observation:
         if seed is None:
