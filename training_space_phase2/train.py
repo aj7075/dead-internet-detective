@@ -19,15 +19,15 @@ log = logging.getLogger(__name__)
 HF_SPACE_URL      = os.environ.get("HF_SPACE_URL", "https://aryanjain7031-dead-internet-detective.hf.space")
 WANDB_KEY         = os.environ.get("WANDB_KEY", "")
 HF_TOKEN          = os.environ.get("HF_TOKEN", "")
-HF_MODEL_REPO     = os.environ.get("HF_MODEL_REPO", "AryanJain7031/dead-internet-detective-model")
+HF_MODEL_REPO     = os.environ.get("HF_MODEL_REPO", "PriyanshuHF/dead-internet-detective-model-p2")
 # Ungated FP16 mirror — quantized on the fly by bitsandbytes
 MODEL_NAME        = os.environ.get("MODEL_NAME", "NousResearch/Meta-Llama-3.1-8B-Instruct")
 SMOKE_TEST        = os.environ.get("SMOKE_TEST", "false").lower() == "true"
-NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 15
+NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 20
 ROLLOUTS_PER_STEP = 2   if SMOKE_TEST else 4
-MAX_EP_STEPS      = 10  if SMOKE_TEST else 4
-MAX_EP_SECS       = 15
-DIFFICULTIES      = ["easy"] if SMOKE_TEST else ["easy"]
+MAX_EP_STEPS      = 10  if SMOKE_TEST else 6
+MAX_EP_SECS       = 20
+DIFFICULTIES      = ["easy"] if SMOKE_TEST else ["easy", "medium", "hard"]
 SAVE_PATH         = "./trained_model"
 MAX_SEQ_LENGTH    = 2048
 
@@ -225,7 +225,7 @@ def run_training():
     if WANDB_KEY:
         try:
             wandb.login(key=WANDB_KEY)
-            wandb.init(project="dead-internet-detective", name="phase1-a10g")
+            wandb.init(project="dead-internet-detective", name="phase2-mixed-a10g")
         except Exception as e:
             _log(f"wandb init failed: {e} (continuing without wandb)")
 
@@ -291,7 +291,7 @@ def run_training():
     log_path = os.path.join(SAVE_PATH, "training_log.json")
     with open(log_path, "w") as f:
         json.dump({
-            "phase": "phase1-easy",
+            "phase": "phase2-mixed",
             "model_name": MODEL_NAME,
             "num_train_steps": NUM_TRAIN_STEPS,
             "rollouts_per_step": ROLLOUTS_PER_STEP,

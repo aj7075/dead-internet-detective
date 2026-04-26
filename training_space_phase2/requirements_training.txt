@@ -1,0 +1,13 @@
+torch>=2.1.0
+torchvision
+torchaudio
+unsloth
+trl>=0.8.6
+wandb
+requests
+pydantic
+fastapi
+uvicorn
+datasets
+matplotlib
+huggingface_hub
