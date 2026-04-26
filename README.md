@@ -211,7 +211,7 @@ uvicorn dead_internet_detective.server.app:app --reload --port 8000
 | 🤖 Model P2 | [PriyanshuHF/dead-internet-detective-model-p2](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p2) |
 | 🤖 Model P3 | [PriyanshuHF/dead-internet-detective-model-p3](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p3) |
 | 📊 W&B Run (P1) | [Training metrics](https://wandb.ai/models-srm-institute-of-science-and-technology9361/dead-internet-detective/workspace?nw=nwuseraryanjain7031) |
-| 📝 Writeup / Blog | [This Space's README](https://huggingface.co/spaces/AryanJain7031/dead-internet-detective) |
+| 📝 Blog / Writeup | [BLOG.md](https://huggingface.co/spaces/AryanJain7031/dead-internet-detective/blob/main/BLOG.md) |
 
 ---
 
