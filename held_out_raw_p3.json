@@ -1,0 +1,542 @@
+[
+  {
+    "seed": 500,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 500,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 500,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  }
+]
