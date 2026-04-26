@@ -92,4 +92,31 @@ jobs:
           )
           print("Synced to PriyanshuHF/dead-internet-detective-trainer-p2")
           EOF
+  sync-eval-space:
+    name: Sync eval Space (AryanJain7031/dead-internet-detective-eval)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push eval_space/ to HF eval Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN_P1 }}
+        run: |
+          pip install -q huggingface_hub
+          python - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.upload_folder(
+              folder_path="eval_space",
+              repo_id="AryanJain7031/dead-internet-detective-eval",
+              repo_type="space",
+              ignore_patterns=["*.pyc", "__pycache__"],
+              commit_message=f"sync from GitHub: ${{ github.sha }}"[:72],
+          )
+          print("Synced to AryanJain7031/dead-internet-detective-eval")
+          EOF
 # Auto-sync via GitHub Actions to HuggingFace Spaces
