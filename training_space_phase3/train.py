@@ -19,14 +19,15 @@ log = logging.getLogger(__name__)
 HF_SPACE_URL      = os.environ.get("HF_SPACE_URL", "https://aryanjain7031-dead-internet-detective.hf.space")
 WANDB_KEY         = os.environ.get("WANDB_KEY", "")
 HF_TOKEN          = os.environ.get("HF_TOKEN", "")
-HF_MODEL_REPO     = os.environ.get("HF_MODEL_REPO", "PriyanshuHF/dead-internet-detective-model-p3")
+HF_MODEL_REPO     = os.environ.get("HF_MODEL_REPO", "PriyanshuHF/dead-internet-detective-model-p4")
 # Ungated FP16 mirror — quantized on the fly by bitsandbytes
 MODEL_NAME        = os.environ.get("MODEL_NAME", "NousResearch/Meta-Llama-3.1-8B-Instruct")
 SMOKE_TEST        = os.environ.get("SMOKE_TEST", "false").lower() == "true"
-NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 25
-ROLLOUTS_PER_STEP = 2   if SMOKE_TEST else 2
-MAX_EP_STEPS      = 10  if SMOKE_TEST else 6
-MAX_EP_SECS       = 15
+NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 60
+ROLLOUTS_PER_STEP = 2   if SMOKE_TEST else 4
+MAX_EP_STEPS      = 4   if SMOKE_TEST else 6   # tight cap forces early file_report
+MAX_EP_SECS       = 20
+TIMEOUT_PENALTY   = -0.3                        # penalty when episode times out without file_report
 DIFFICULTIES      = ["easy"] if SMOKE_TEST else ["easy", "medium", "hard"]
 SAVE_PATH         = "./trained_model"
 MAX_SEQ_LENGTH    = 2048
@@ -126,6 +127,7 @@ def run_episode(model, tokenizer, client, difficulty="easy", seed=None):
         steps        = 0
         t0           = time.time()
 
+        filed_report = False
         for _ in range(MAX_EP_STEPS):
             if time.time() - t0 > MAX_EP_SECS:
                 client.step(session_id, "file_report", {
@@ -134,6 +136,8 @@ def run_episode(model, tokenizer, client, difficulty="easy", seed=None):
                 })
                 break
             action = generate_action(model, tokenizer, obs)
+            if action["tool"] == "file_report":
+                filed_report = True
             result = client.step(session_id, action["tool"], action.get("params", {}))
             total_reward += result.get("reward", 0.0)
             steps        += 1
@@ -141,8 +145,11 @@ def run_episode(model, tokenizer, client, difficulty="easy", seed=None):
             if result.get("done"):
                 break
 
+        if not filed_report:
+            total_reward += TIMEOUT_PENALTY
+
         return {"total_reward": total_reward, "steps_used": steps,
-                "difficulty": difficulty, "seed": seed}
+                "filed_report": filed_report, "difficulty": difficulty, "seed": seed}
     except Exception as e:
         _log(f"Episode error: {e}")
         return {"total_reward": 0.0, "steps_used": 0, "difficulty": difficulty, "seed": seed}
@@ -225,7 +232,7 @@ def run_training():
     if WANDB_KEY:
         try:
             wandb.login(key=WANDB_KEY)
-            wandb.init(project="dead-internet-detective", name="phase3-improved-a10g")
+            wandb.init(project="dead-internet-detective", name="phase4-timeout-penalty")
         except Exception as e:
             _log(f"wandb init failed: {e} (continuing without wandb)")
 
@@ -238,7 +245,8 @@ def run_training():
             rewards.append(float(r))
             STATUS["step"] += 1
             STATUS["mean_reward"] = r
-            _log(f"step={STATUS['step']} reward={r:.3f} difficulty={difficulty}")
+            filed = result.get("filed_report", False)
+            _log(f"step={STATUS['step']} reward={r:.3f} difficulty={difficulty} filed={filed}")
             if WANDB_KEY:
                 try:
                     wandb.log({"train/reward": r, "train/step": STATUS["step"]})
@@ -291,7 +299,7 @@ def run_training():
     log_path = os.path.join(SAVE_PATH, "training_log.json")
     with open(log_path, "w") as f:
         json.dump({
-            "phase": "phase3-improved",
+            "phase": "phase4-timeout-penalty",
             "model_name": MODEL_NAME,
             "num_train_steps": NUM_TRAIN_STEPS,
             "rollouts_per_step": ROLLOUTS_PER_STEP,
