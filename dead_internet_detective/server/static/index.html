@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dead Internet Detective</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d0d0d;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  a { color: #d4a017; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 24px 20px; }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 20px;
+    margin-bottom: 28px;
+  }
+  header h1 {
+    font-size: 26px;
+    color: #e8e8e8;
+    letter-spacing: 1px;
+  }
+  header h1 span { color: #d4a017; }
+  header p {
+    margin-top: 6px;
+    color: #888;
+    font-size: 13px;
+  }
+  .badges { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #aaa;
+  }
+  .badge:hover { border-color: #d4a017; color: #d4a017; }
+
+  /* ── Sections ── */
+  section { margin-bottom: 32px; }
+  section h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d4a017;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #1e1e1e;
+    padding-bottom: 6px;
+  }
+  section p { color: #c0c0c0; margin-bottom: 10px; }
+
+  /* ── Two-column layout ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── Table ── */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: #888; padding: 6px 10px; border-bottom: 1px solid #222; }
+  td { padding: 5px 10px; border-bottom: 1px solid #1a1a1a; color: #c0c0c0; }
+  td code { color: #d4a017; background: #161616; padding: 1px 5px; border-radius: 2px; }
+  tr:hover td { background: #111; }
+
+  /* ── Demo ── */
+  .demo-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  select, input[type="number"], input[type="text"] {
+    background: #111;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 13px;
+  }
+  select:focus, input:focus { outline: none; border-color: #d4a017; }
+
+  .btn {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary { background: #d4a017; color: #0d0d0d; font-weight: bold; }
+  .btn-secondary { background: #222; color: #ccc; border: 1px solid #333; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+  /* ── Case file ── */
+  #case-panel { display: none; }
+
+  .case-header {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .case-header .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  .case-header .claim-text {
+    color: #e8e8e8;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .dossier-urls { margin-top: 10px; }
+  .dossier-url {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    color: #d4a017;
+    padding: 2px 8px;
+    margin: 3px 4px 3px 0;
+    border-radius: 2px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .dossier-url:hover { border-color: #d4a017; }
+
+  /* ── Tools ── */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tool-btn {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    color: #c0c0c0;
+    padding: 7px 10px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .tool-btn:hover { border-color: #d4a017; color: #d4a017; }
+  .tool-btn.active { border-color: #d4a017; color: #d4a017; background: #1a1500; }
+  .tool-btn.danger { border-color: #5a1a1a; color: #c0392b; }
+  .tool-btn.danger:hover { border-color: #c0392b; }
+
+  /* ── Param form ── */
+  #param-form {
+    display: none;
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  #param-form h3 {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .param-row { margin-bottom: 10px; }
+  .param-row label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .param-row input, .param-row select, .param-row textarea {
+    width: 100%;
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    color: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 13px;
+  }
+  .param-row textarea { min-height: 60px; resize: vertical; }
+  .param-row input:focus, .param-row select:focus, .param-row textarea:focus {
+    outline: none; border-color: #d4a017;
+  }
+
+  /* ── Investigation log ── */
+  #log {
+    background: #080808;
+    border: 1px solid #1e1e1e;
+    border-radius: 4px;
+    padding: 14px;
+    min-height: 120px;
+    max-height: 360px;
+    overflow-y: auto;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .log-step { margin-bottom: 12px; border-bottom: 1px solid #111; padding-bottom: 10px; }
+  .log-step:last-child { border-bottom: none; }
+  .log-tool { color: #d4a017; }
+  .log-reward { color: #27ae60; }
+  .log-reward.negative { color: #c0392b; }
+  .log-obs { color: #888; white-space: pre-wrap; word-break: break-all; }
+  .log-placeholder { color: #444; font-style: italic; }
+  .log-done { color: #27ae60; font-size: 13px; font-weight: bold; margin-top: 8px; }
+  .log-done.fail { color: #c0392b; }
+
+  .reward-bar {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .reward-bar .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+  .reward-bar .value { font-size: 18px; color: #d4a017; font-weight: bold; }
+
+  /* ── Verdict badge ── */
+  .verdict-true { color: #27ae60; }
+  .verdict-false { color: #c0392b; }
+  .verdict-unverifiable { color: #888; }
+
+  /* ── Links ── */
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .link-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 12px 14px;
+    transition: border-color 0.15s;
+  }
+  .link-card:hover { border-color: #d4a017; }
+  .link-card .link-label { font-size: 11px; color: #555; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+  .link-card .link-title { color: #d4a017; font-size: 13px; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #111; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <h1>🕵️ Dead <span>Internet</span> Detective</h1>
+    <p>An RL environment for training LLMs to investigate disinformation through multi-hop reasoning over a synthetic internet.</p>
+    <div class="badges">
+      <a class="badge" href="https://huggingface.co/spaces/AryanJain7031/dead-internet-detective-eval">🔬 Eval Space</a>
+      <a class="badge" href="https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p3">🤖 Model P3</a>
+      <a class="badge" href="https://wandb.ai/models-srm-institute-of-science-and-technology9361/dead-internet-detective/workspace?nw=nwuseraryanjain7031">📊 W&B Run</a>
+      <a class="badge" href="https://github.com/aj7075/dead-internet-detective">⚙ GitHub</a>
+      <a class="badge" href="/docs">📖 API Docs</a>
+    </div>
+  </header>
+
+  <!-- What this is -->
+  <section>
+    <h2>The Environment</h2>
+    <p>
+      Most disinformation detection is classification — read text, output a label.
+      That misses the point. Sophisticated fakes fail not because they sound wrong,
+      but because their citations lead nowhere, their authors don't exist, and their domains
+      were registered last week. You can't catch any of that by reading the headline. You have to investigate.
+    </p>
+    <p>
+      This environment gives an LLM agent a <strong style="color:#e8e8e8">claim</strong> and a set of
+      <strong style="color:#e8e8e8">dossier URLs</strong> — entry points into a fully synthetic internet.
+      The agent has 12 tools, a case file to maintain, and a step budget. When it's ready, it files a report.
+      A five-component reward function scores not just the verdict but the quality of the investigation.
+    </p>
+  </section>
+
+  <!-- Live Demo -->
+  <section>
+    <h2>Live Demo — Run an Episode</h2>
+
+    <div class="demo-controls">
+      <label for="difficulty" style="color:#666;font-size:12px;">DIFFICULTY</label>
+      <select id="difficulty">
+        <option value="easy">easy</option>
+        <option value="medium">medium</option>
+        <option value="hard">hard</option>
+      </select>
+      <label for="seed-input" style="color:#666;font-size:12px;">SEED</label>
+      <input type="number" id="seed-input" value="42" style="width:80px;">
+      <button class="btn btn-primary" id="start-btn" onclick="startEpisode()">▶ Begin Investigation</button>
+    </div>
+
+    <!-- Case file (shown after reset) -->
+    <div id="case-panel">
+      <div class="case-header">
+        <div class="label">Claim under investigation</div>
+        <div class="claim-text" id="claim-text">—</div>
+        <div class="dossier-urls" id="dossier-urls"></div>
+      </div>
+
+      <div class="reward-bar">
+        <span class="label">Total Reward</span>
+        <span class="value" id="total-reward">0.0000</span>
+      </div>
+
+      <!-- Tool grid -->
+      <div class="tools-grid" id="tools-grid">
+        <!-- populated by JS -->
+      </div>
+
+      <!-- Param form -->
+      <div id="param-form">
+        <h3 id="param-form-title">Parameters</h3>
+        <div id="param-fields"></div>
+        <button class="btn btn-primary" id="execute-btn" onclick="executeStep()" style="margin-top:10px;">Execute</button>
+        <button class="btn btn-secondary" onclick="closeParamForm()" style="margin-top:10px;margin-left:8px;">Cancel</button>
+      </div>
+
+      <!-- Log -->
+      <div id="log">
+        <div class="log-placeholder">Investigation log will appear here…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Reference -->
+  <section>
+    <h2>12 Investigative Tools</h2>
+    <div class="two-col">
+      <table>
+        <thead><tr><th>Tool</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>visit_page</code></td><td>Read a synthetic webpage</td></tr>
+          <tr><td><code>search</code></td><td>Query the synthetic search engine</td></tr>
+          <tr><td><code>wayback_check</code></td><td>Check URL history — new = suspicious</td></tr>
+          <tr><td><code>whois_lookup</code></td><td>Domain registration date &amp; registrar</td></tr>
+          <tr><td><code>author_lookup</code></td><td>Cross-domain author credibility check</td></tr>
+          <tr><td><code>image_provenance</code></td><td>Where else has this image appeared?</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead><tr><th>Tool</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><code>citation_trace</code></td><td>Follow citation chain up to 3 hops</td></tr>
+          <tr><td><code>linguistic_fingerprint</code></td><td>AI-generation probability &amp; patterns</td></tr>
+          <tr><td><code>cross_reference</code></td><td>Detect contradictions between two sources</td></tr>
+          <tr><td><code>update_case_file</code></td><td>Log evidence to the investigation record</td></tr>
+          <tr><td><code>request_expert</code></td><td>Synthetic domain expert consultation</td></tr>
+          <tr><td><code>file_report</code></td><td>File final verdict — ends the episode</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Reward function -->
+  <section>
+    <h2>Reward Function</h2>
+    <table>
+      <thead><tr><th>Component</th><th>Weight</th><th>What it measures</th></tr></thead>
+      <tbody>
+        <tr><td>Verdict accuracy</td><td>30%</td><td>Right conclusion?</td></tr>
+        <tr><td>Evidence chain quality</td><td>25%</td><td>Did you cite the relevant pages?</td></tr>
+        <tr><td>Synthetic source detection</td><td>20%</td><td>Did you flag the fake pages?</td></tr>
+        <tr><td>Internal consistency</td><td>15%</td><td>Does reasoning match evidence?</td></tr>
+        <tr><td>Step efficiency</td><td>10%</td><td>Solved without burning the budget?</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Before/After -->
+  <section>
+    <h2>Training Results</h2>
+    <table>
+      <thead><tr><th>Component</th><th>Untrained</th><th>P1 Trained</th></tr></thead>
+      <tbody>
+        <tr><td>Verdict accuracy</td><td>~0.10</td><td>~0.55</td></tr>
+        <tr><td>Citation depth</td><td>0.00</td><td>~0.30</td></tr>
+        <tr><td>Contradiction detection</td><td>0.00</td><td>~0.20</td></tr>
+        <tr><td>Tool diversity</td><td>~0.05</td><td>~0.25</td></tr>
+        <tr><td>Case file quality</td><td>0.00</td><td>~0.15</td></tr>
+        <tr><td><strong>Total reward</strong></td><td><strong>~0.15</strong></td><td><strong>~1.45</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px;color:#555;font-size:12px;">
+      Trained using GRPO on Llama-3.1-8B-Instruct across 3 progressive phases (easy → medium → hard).
+      <a href="https://wandb.ai/models-srm-institute-of-science-and-technology9361/dead-internet-detective/workspace?nw=nwuseraryanjain7031">W&amp;B training run →</a>
+    </p>
+  </section>
+
+  <!-- Links -->
+  <section>
+    <h2>Resources</h2>
+    <div class="link-grid">
+      <a class="link-card" href="https://huggingface.co/spaces/AryanJain7031/dead-internet-detective-eval">
+        <span class="link-label">Eval Space</span>
+        <span class="link-title">Run P3 model live →</span>
+      </a>
+      <a class="link-card" href="https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p3">
+        <span class="link-label">Trained Model</span>
+        <span class="link-title">P3 LoRA adapter →</span>
+      </a>
+      <a class="link-card" href="https://github.com/aj7075/dead-internet-detective/blob/main/notebooks/training_grpo.ipynb">
+        <span class="link-label">Training Notebook</span>
+        <span class="link-title">GRPO via TRL + Unsloth →</span>
+      </a>
+      <a class="link-card" href="https://wandb.ai/models-srm-institute-of-science-and-technology9361/dead-internet-detective/workspace?nw=nwuseraryanjain7031">
+        <span class="link-label">W&amp;B Run (P1)</span>
+        <span class="link-title">Training metrics →</span>
+      </a>
+      <a class="link-card" href="/docs">
+        <span class="link-label">API Reference</span>
+        <span class="link-title">Swagger UI →</span>
+      </a>
+      <a class="link-card" href="https://github.com/aj7075/dead-internet-detective">
+        <span class="link-label">Source Code</span>
+        <span class="link-title">GitHub →</span>
+      </a>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<script>
+// ── Tool definitions ──────────────────────────────────────────────
+const TOOLS = [
+  { name: 'visit_page',           params: [{id:'url',         label:'URL',           type:'text'}] },
+  { name: 'search',               params: [{id:'query',       label:'Query',         type:'text'}] },
+  { name: 'wayback_check',        params: [{id:'url',         label:'URL',           type:'text'}] },
+  { name: 'whois_lookup',         params: [{id:'domain',      label:'Domain',        type:'text'}] },
+  { name: 'author_lookup',        params: [{id:'author_name', label:'Author Name',   type:'text'}] },
+  { name: 'image_provenance',     params: [{id:'image_url',   label:'Image URL',     type:'text'}] },
+  { name: 'citation_trace',       params: [{id:'url',         label:'URL',           type:'text'}] },
+  { name: 'linguistic_fingerprint',params:[{id:'url',         label:'URL',           type:'text'}] },
+  { name: 'cross_reference',      params: [{id:'url_a',       label:'URL A',         type:'text'},
+                                           {id:'url_b',       label:'URL B',         type:'text'}] },
+  { name: 'update_case_file',     params: [{id:'confidence',  label:'Confidence (0–1)', type:'number'},
+                                           {id:'confirmed_facts', label:'Confirmed Facts (comma-separated)', type:'text'}] },
+  { name: 'request_expert',       params: [{id:'domain',      label:'Domain',        type:'select',
+                                            options:['medical','legal','statistical']},
+                                           {id:'question',    label:'Question',      type:'text'}] },
+  { name: 'file_report',          params: [{id:'verdict',     label:'Verdict',       type:'select',
+                                            options:['true','false','unverifiable']},
+                                           {id:'confidence',  label:'Confidence (0–1)', type:'number'},
+                                           {id:'reasoning',   label:'Reasoning',     type:'textarea'}],
+                                   danger: true },
+];
+
+let sessionId  = null;
+let currentObs = null;
+let totalRew   = 0.0;
+let activeTool = null;
+let done       = false;
+
+// ── Episode control ───────────────────────────────────────────────
+async function startEpisode() {
+  const diff = document.getElementById('difficulty').value;
+  const seed = parseInt(document.getElementById('seed-input').value) || 42;
+
+  setStartBtn(false);
+  clearLog();
+  logPlaceholder('Starting investigation…');
+
+  try {
+    const res = await fetch('/reset', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({task_id: diff, seed: seed})
+    });
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
+    const data = await res.json();
+
+    sessionId  = data.session_id;
+    currentObs = data.observation;
+    totalRew   = 0.0;
+    done       = false;
+    activeTool = null;
+
+    document.getElementById('claim-text').textContent = currentObs.claim || '(no claim)';
+    renderDossierUrls(currentObs.dossier_urls || []);
+    updateReward(0);
+    renderTools();
+    closeParamForm();
+    clearLog();
+    document.getElementById('case-panel').style.display = 'block';
+
+  } catch(e) {
+    logPlaceholder('Error: ' + e.message);
+    setStartBtn(true);
+  }
+}
+
+// ── Tool selection ────────────────────────────────────────────────
+function selectTool(toolName) {
+  if (done) return;
+  activeTool = TOOLS.find(t => t.name === toolName);
+  if (!activeTool) return;
+
+  // Highlight
+  document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tb-' + toolName).classList.add('active');
+
+  // Build param form
+  const form = document.getElementById('param-form');
+  document.getElementById('param-form-title').textContent = toolName;
+  const fields = document.getElementById('param-fields');
+  fields.innerHTML = '';
+
+  activeTool.params.forEach(p => {
+    const row = document.createElement('div');
+    row.className = 'param-row';
+    const lbl = document.createElement('label');
+    lbl.textContent = p.label;
+    row.appendChild(lbl);
+
+    let input;
+    if (p.type === 'select') {
+      input = document.createElement('select');
+      p.options.forEach(o => {
+        const opt = document.createElement('option');
+        opt.value = opt.textContent = o;
+        input.appendChild(opt);
+      });
+    } else if (p.type === 'textarea') {
+      input = document.createElement('textarea');
+      input.placeholder = 'Enter ' + p.label.toLowerCase() + '…';
+    } else {
+      input = document.createElement('input');
+      input.type = p.type === 'number' ? 'number' : 'text';
+      input.step = '0.01';
+      input.placeholder = p.type === 'number' ? '0.0 – 1.0' : 'Enter ' + p.label.toLowerCase() + '…';
+
+      // Prefill URL fields from dossier
+      if (p.id === 'url' || p.id === 'url_a') {
+        const urls = (currentObs && currentObs.dossier_urls) || [];
+        if (urls.length > 0) input.value = urls[0];
+      }
+      if (p.id === 'url_b') {
+        const urls = (currentObs && currentObs.dossier_urls) || [];
+        if (urls.length > 1) input.value = urls[1];
+      }
+    }
+    input.id = 'pf-' + p.id;
+    row.appendChild(input);
+    fields.appendChild(row);
+  });
+
+  if (toolName === 'file_report') {
+    document.getElementById('execute-btn').textContent = '⚠ File Report & End Episode';
+    document.getElementById('execute-btn').className = 'btn btn-secondary';
+  } else {
+    document.getElementById('execute-btn').textContent = 'Execute';
+    document.getElementById('execute-btn').className = 'btn btn-primary';
+  }
+
+  form.style.display = 'block';
+}
+
+function closeParamForm() {
+  document.getElementById('param-form').style.display = 'none';
+  activeTool = null;
+  document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+}
+
+// ── Step execution ────────────────────────────────────────────────
+async function executeStep() {
+  if (!activeTool || !sessionId || done) return;
+
+  const params = {};
+  let valid = true;
+  activeTool.params.forEach(p => {
+    const el = document.getElementById('pf-' + p.id);
+    if (!el) return;
+    let val = el.value.trim();
+    if (p.type === 'number') {
+      val = parseFloat(val) || 0;
+    } else if (p.id === 'confirmed_facts') {
+      val = val ? val.split(',').map(s => s.trim()).filter(Boolean) : [];
+    }
+    params[p.id] = val;
+  });
+
+  // Build full params for update_case_file
+  if (activeTool.name === 'update_case_file') {
+    params.synthetic_sources = params.synthetic_sources || [];
+    params.credible_sources  = params.credible_sources  || [];
+    params.open_questions    = params.open_questions    || [];
+    params.contradiction_log = params.contradiction_log || [];
+  }
+
+  const toolName = activeTool.name;
+  closeParamForm();
+  document.getElementById('execute-btn').disabled = true;
+
+  try {
+    const res = await fetch('/step', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: sessionId, action: {tool: toolName, params}})
+    });
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
+    const data = await res.json();
+
+    totalRew += data.reward || 0;
+    updateReward(totalRew);
+    currentObs = data.observation || currentObs;
+
+    // Log this step
+    logStep(toolName, params, data);
+
+    if (data.done) {
+      done = true;
+      disableTools();
+      const termReward = (data.info && data.info.terminal_reward) || 0;
+      logDone(totalRew, termReward, params.verdict);
+    }
+
+  } catch(e) {
+    logError(e.message);
+  }
+
+  document.getElementById('execute-btn').disabled = false;
+  setStartBtn(true);
+}
+
+// ── Dossier URL click → prefills visit_page ───────────────────────
+function clickDossierUrl(url) {
+  if (done) return;
+  selectTool('visit_page');
+  const el = document.getElementById('pf-url');
+  if (el) el.value = url;
+}
+
+// ── Render helpers ────────────────────────────────────────────────
+function renderTools() {
+  const grid = document.getElementById('tools-grid');
+  grid.innerHTML = '';
+  TOOLS.forEach(t => {
+    const btn = document.createElement('button');
+    btn.className = 'tool-btn' + (t.danger ? ' danger' : '');
+    btn.id = 'tb-' + t.name;
+    btn.textContent = t.name;
+    btn.onclick = () => selectTool(t.name);
+    grid.appendChild(btn);
+  });
+}
+
+function renderDossierUrls(urls) {
+  const el = document.getElementById('dossier-urls');
+  el.innerHTML = '<span style="color:#555;font-size:11px;margin-right:6px;">DOSSIER:</span>';
+  urls.forEach(u => {
+    const span = document.createElement('span');
+    span.className = 'dossier-url';
+    span.textContent = u;
+    span.title = 'Click to visit this page';
+    span.onclick = () => clickDossierUrl(u);
+    el.appendChild(span);
+  });
+}
+
+function updateReward(r) {
+  document.getElementById('total-reward').textContent = r.toFixed(4);
+}
+
+function disableTools() {
+  document.querySelectorAll('.tool-btn').forEach(b => b.disabled = true);
+}
+
+function setStartBtn(enabled) {
+  document.getElementById('start-btn').disabled = !enabled;
+}
+
+// ── Logging ───────────────────────────────────────────────────────
+function clearLog() {
+  document.getElementById('log').innerHTML = '';
+}
+
+function logPlaceholder(msg) {
+  document.getElementById('log').innerHTML =
+    `<div class="log-placeholder">${escHtml(msg)}</div>`;
+}
+
+function logStep(toolName, params, data) {
+  const log  = document.getElementById('log');
+  const obs  = data.observation;
+  const rew  = (data.reward || 0).toFixed(4);
+  const rewClass = data.reward >= 0 ? 'log-reward' : 'log-reward negative';
+
+  let obsText = '';
+  if (obs) {
+    // Show most relevant bit of the observation
+    const keys = ['page_content','search_results','whois','author_info','provenance',
+                  'chain','fingerprint','contradiction','expert_opinion','case_file'];
+    for (const k of keys) {
+      if (obs[k] !== undefined) {
+        const raw = typeof obs[k] === 'string' ? obs[k] : JSON.stringify(obs[k], null, 2);
+        obsText = raw.slice(0, 400) + (raw.length > 400 ? '…' : '');
+        break;
+      }
+    }
+    if (!obsText) {
+      const raw = JSON.stringify(obs, null, 2);
+      obsText = raw.slice(0, 400) + (raw.length > 400 ? '…' : '');
+    }
+  }
+
+  const div = document.createElement('div');
+  div.className = 'log-step';
+  div.innerHTML =
+    `<span class="log-tool">${escHtml(toolName)}</span>` +
+    `<span class="log-reward ${rewClass}"> +${rew}</span>` +
+    (obsText ? `<div class="log-obs">${escHtml(obsText)}</div>` : '');
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function logDone(total, termReward, verdict) {
+  const log = document.getElementById('log');
+  const vClass = verdict === 'true' ? 'verdict-true' :
+                 verdict === 'false' ? 'verdict-false' : 'verdict-unverifiable';
+  const div = document.createElement('div');
+  div.innerHTML =
+    `<div class="log-done">▶ Episode complete — ` +
+    `Verdict: <span class="${vClass}">${escHtml(verdict || '—')}</span> · ` +
+    `Terminal reward: ${termReward.toFixed(4)} · ` +
+    `Total: ${total.toFixed(4)}</div>`;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function logError(msg) {
+  const log = document.getElementById('log');
+  const div = document.createElement('div');
+  div.innerHTML = `<div class="log-done fail">Error: ${escHtml(msg)}</div>`;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

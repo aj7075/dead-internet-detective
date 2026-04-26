@@ -1,5 +1,6 @@
 fastapi
 uvicorn[standard]
+aiofiles
 pydantic>=2.0
 pytest
 requests

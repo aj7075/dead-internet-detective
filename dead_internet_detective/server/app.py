@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import os
 import threading
 import uuid
 from dataclasses import asdict, fields
+from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from dead_internet_detective.environment import DeadInternetEnvironment
@@ -13,6 +17,14 @@ from dead_internet_detective.models import Action
 
 
 app = FastAPI()
+
+_static_dir = Path(__file__).parent / "static"
+app.mount("/static", StaticFiles(directory=str(_static_dir)), name="static")
+
+
+@app.get("/", response_class=HTMLResponse)
+def root():
+    return (_static_dir / "index.html").read_text()
 _sessions: dict[str, DeadInternetEnvironment] = {}
 _lock = threading.Lock()
 
