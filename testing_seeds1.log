@@ -1,0 +1,168 @@
+======================================================================
+  DEAD INTERNET DETECTIVE — TESTING LOG
+  Generated: 2026-04-26 12:26:38
+======================================================================
+
+OVERVIEW
+--------
+This log records held-out evaluation of the BASELINE (dumb) agent.
+The baseline agent visits all dossier URLs then immediately files
+a verdict of TRUE with 0.5 confidence — no citation tracing,
+no synthetic detection, no case file updates.
+
+These seeds were NEVER used during training (training used random
+seeds from 0–99999, but we reserve 500–519 as our held-out eval set).
+
+PURPOSE: establish 'before training' baseline numbers so we can
+compare against the trained P2 model (PriyanshuHF/dead-internet-detective-model-p2).
+
+SEED RANGES
+-----------
+  Training seeds : random draw from 0 – 99999 (per rollout, untracked)
+  Held-out seeds : 500 – 519 (this evaluation, never touched in training)
+  Difficulties   : easy, medium, hard
+  Total episodes : 60  (20 seeds × 3 difficulties)
+
+WHAT EACH SEED PRODUCES
+-----------------------
+Each seed deterministically generates a unique 'synthetic internet':
+  easy  → 1 credible source + 2 synthetic (SEO farm + wellness blog)
+  medium→ 1-2 credible sources + 3 synthetic pages
+  hard  → 1 credible + 2 sophisticated fakes + SEO farm + wellness blog
+
+Same seed + same difficulty = identical episode every time (deterministic).
+Ground truth verdict is one of: true / false / unverifiable
+
+RESULTS SUMMARY
+---------------
+  Difficulty Episodes   Mean Reward    Min      Max      Baseline Acc
+  ---------- --------   -----------    -----    -----    ------------
+  easy       20         0.38           0.305    0.455    0.5
+  medium     20         0.3592         0.3067   0.4567   0.35
+  hard       20         0.3825         0.3075   0.4575   0.5
+
+  Overall mean reward (all 60 episodes): 0.3739
+
+WHAT REWARD MEANS
+-----------------
+Terminal reward formula (on filing final report):
+  0.30 × verdict_accuracy       (did agent get right answer?)
+  0.25 × evidence_chain_quality  (did agent visit+cite real URLs?)
+  0.20 × synthetic_detection     (did agent flag fake pages?)
+  0.15 × internal_consistency    (did reasoning address contradictions?)
+  0.10 × step_efficiency         (did agent avoid wasting steps?)
+  All multiplied by 0.5, clamped to [-0.5, 1.0]
+  Step exhaustion penalty: -0.15 if all steps used up
+
+Baseline agent score breakdown (why it scores ~0.38):
+  - Visits all dossier URLs → evidence_chain_quality = partial credit
+  - Always files 'true' → verdict_accuracy depends on ground truth
+    (40% of episodes have gt=true → gets credit those times)
+  - Never detects synthetic sources → synthetic_detection = 0
+  - No contradictions addressed → internal_consistency = 1.0 (no log)
+  - Uses only 4 steps out of 40-80 → step_efficiency = high
+
+COMPARISON: BASELINE vs TRAINED
+--------------------------------
+  Phase 1 model (AryanJain7031, easy only, 15 steps):
+    Final training reward: ~0.010 (plateaued — easy curriculum too narrow)
+
+  Phase 2 model (PriyanshuHF, easy+medium+hard, 20 steps):
+    Final training reward: ~0.020–0.050 (peak seen: 0.293 on medium)
+    Model repo: PriyanshuHF/dead-internet-detective-model-p2
+
+  Baseline dumb agent (this eval, seeds 500-519):
+    easy mean:   0.38
+    medium mean: 0.3592
+    hard mean:   0.3825
+
+  Note: baseline scores ~0.38 because it accidentally benefits from
+  step_efficiency (only uses 4 steps) and internal_consistency bonus
+  (no contradictions logged = perfect consistency score).
+  A trained agent will score higher by correctly detecting synthetic
+  sources and filing the right verdict more often.
+
+PER-SEED DETAIL
+---------------
+  Seed   Difficulty GT Verdict     Filed    Reward     Steps
+  ------ ---------- ------------   ------   --------   -----
+  500    easy       true           true     0.455      4  ✓
+  501    easy       true           true     0.455      4  ✓
+  502    easy       false          true     0.305      4  ✗
+  503    easy       false          true     0.305      4  ✗
+  504    easy       true           true     0.455      4  ✓
+  505    easy       true           true     0.455      4  ✓
+  506    easy       unverifiable   true     0.305      4  ✗
+  507    easy       true           true     0.455      4  ✓
+  508    easy       false          true     0.305      4  ✗
+  509    easy       unverifiable   true     0.305      4  ✗
+  510    easy       false          true     0.305      4  ✗
+  511    easy       true           true     0.455      4  ✓
+  512    easy       true           true     0.455      4  ✓
+  513    easy       false          true     0.305      4  ✗
+  514    easy       false          true     0.305      4  ✗
+  515    easy       unverifiable   true     0.305      4  ✗
+  516    easy       true           true     0.455      4  ✓
+  517    easy       true           true     0.455      4  ✓
+  518    easy       true           true     0.455      4  ✓
+  519    easy       false          true     0.305      4  ✗
+  500    medium     false          true     0.3067     4  ✗
+  501    medium     false          true     0.3067     4  ✗
+  502    medium     unverifiable   true     0.3067     4  ✗
+  503    medium     true           true     0.4567     4  ✓
+  504    medium     unverifiable   true     0.3067     4  ✗
+  505    medium     false          true     0.3067     4  ✗
+  506    medium     true           true     0.4567     4  ✓
+  507    medium     true           true     0.4567     4  ✓
+  508    medium     unverifiable   true     0.3067     4  ✗
+  509    medium     false          true     0.3067     4  ✗
+  510    medium     true           true     0.4567     4  ✓
+  511    medium     false          true     0.3067     4  ✗
+  512    medium     true           true     0.4567     4  ✓
+  513    medium     false          true     0.3067     4  ✗
+  514    medium     false          true     0.3067     4  ✗
+  515    medium     true           true     0.4567     4  ✓
+  516    medium     unverifiable   true     0.3067     4  ✗
+  517    medium     false          true     0.3067     4  ✗
+  518    medium     false          true     0.3067     4  ✗
+  519    medium     true           true     0.4567     4  ✓
+  500    hard       unverifiable   true     0.3075     4  ✗
+  501    hard       unverifiable   true     0.3075     4  ✗
+  502    hard       unverifiable   true     0.3075     4  ✗
+  503    hard       true           true     0.4575     4  ✓
+  504    hard       unverifiable   true     0.3075     4  ✗
+  505    hard       true           true     0.4575     4  ✓
+  506    hard       unverifiable   true     0.3075     4  ✗
+  507    hard       false          true     0.3075     4  ✗
+  508    hard       true           true     0.4575     4  ✓
+  509    hard       true           true     0.4575     4  ✓
+  510    hard       unverifiable   true     0.3075     4  ✗
+  511    hard       false          true     0.3075     4  ✗
+  512    hard       true           true     0.4575     4  ✓
+  513    hard       true           true     0.4575     4  ✓
+  514    hard       true           true     0.4575     4  ✓
+  515    hard       unverifiable   true     0.3075     4  ✗
+  516    hard       true           true     0.4575     4  ✓
+  517    hard       true           true     0.4575     4  ✓
+  518    hard       unverifiable   true     0.3075     4  ✗
+  519    hard       true           true     0.4575     4  ✓
+
+VERDICT DISTRIBUTION (held-out seeds 500-519)
+----------------------------------------------
+  easy: {'true': 10, 'unverifiable': 3, 'false': 7}
+  medium: {'true': 7, 'unverifiable': 4, 'false': 9}
+  hard: {'true': 10, 'unverifiable': 8, 'false': 2}
+
+ENVIRONMENT
+-----------
+  Server: dead_internet_detective.server.app (FastAPI, port 8000)
+  Package: dead-internet-detective (local install)
+  Python: 3.13 (venv)
+  Test ran: 2026-04-26 12:26:38
+
+FILES PRODUCED
+--------------
+  held_out_raw.json    — raw per-episode results (JSON)
+  testing_seeds1.log   — this file
+
+======================================================================

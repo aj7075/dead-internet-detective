@@ -1,0 +1,842 @@
+[
+  {
+    "seed": 500,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-aaaqp.com/article/pxmemaxq",
+      "https://lnpdvmme.health/proven-remedy-gut-flora-reset-natural-healing",
+      "https://cdc.gov/publications/qsfcutcfgu"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-sghrn.com/article/pyilqbbn",
+      "https://fudhptea.top/proven-remedy-immune-boost-big-pharma-secret",
+      "https://nature.com/publications/qineilsamz"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nature.com/publications/stzylswvng",
+      "https://wellness-ovyiq.com/article/jymakwkr",
+      "https://sfaybzgn.info/gut-flora-reset-gut-flora-reset-immune-boost"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://swdvxbfn.click/big-pharma-secret-immune-boost-big-pharma-secret",
+      "https://wellness-eerzr.com/article/ssygykob",
+      "https://who.int/publications/jdqbkdvttm"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://cdc.gov/publications/bejnupvcrv",
+      "https://saxbnhxl.click/detox-protocol-natural-healing-gut-flora-reset",
+      "https://wellness-ylvfh.com/article/zruuycyz"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://ztjuvige.info/detox-protocol-gut-flora-reset-immune-boost",
+      "https://wellness-qnqsn.com/article/vacmlfyk",
+      "https://nature.com/publications/shuqbyvkns"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://sqypjytf.info/big-pharma-secret-miracle-cure-proven-remedy",
+      "https://nature.com/publications/xuuxerimca",
+      "https://wellness-rhtxk.com/article/ogykntsh"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-qlrke.com/article/iqtzodww",
+      "https://fvrdealr.click/big-pharma-secret-natural-healing-detox-protocol",
+      "https://cdc.gov/publications/rlyvycufvl"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-mutus.com/article/ghqkfwsp",
+      "https://jqnzisfx.online/gut-flora-reset-gut-flora-reset-doctors-hate-this",
+      "https://sciencedirect.com/publications/cjcqjxotjo"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-pndlf.com/article/jyuwfaea",
+      "https://qtzfoebe.top/doctors-hate-this-proven-remedy-proven-remedy",
+      "https://pubmed.ncbi.nlm.nih.gov/publications/dposriixpa"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://cdc.gov/publications/cbqixewjth",
+      "https://gflyepxx.online/doctors-hate-this-miracle-cure-big-pharma-secret",
+      "https://wellness-qssdv.com/article/sihrzphc"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/msspdnxawd",
+      "https://cbbhkgon.online/gut-flora-reset-miracle-cure-doctors-hate-this",
+      "https://wellness-wvuqy.com/article/oxrpravz"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/jqufgvcodj",
+      "https://wellness-xxgru.com/article/cjpjkmsa",
+      "https://ssoeadph.xyz/natural-healing-big-pharma-secret-detox-protocol"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://gpnsdwkm.xyz/gut-flora-reset-proven-remedy-immune-boost",
+      "https://who.int/publications/rphyasuryo",
+      "https://wellness-gfozf.com/article/juzyqldh"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nih.gov/publications/ekjhivmgyx",
+      "https://yfcjztzd.click/gut-flora-reset-detox-protocol-immune-boost",
+      "https://wellness-kvsce.com/article/nahrfiyl"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-crxza.com/article/pjabvmok",
+      "https://nature.com/publications/uawnazumky",
+      "https://uqcovaas.xyz/miracle-cure-miracle-cure-gut-flora-reset"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://yxalkxim.info/proven-remedy-gut-flora-reset-immune-boost",
+      "https://wellness-mplel.com/article/tzseiaij",
+      "https://cdc.gov/publications/ajhwvnngth"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://rwzklqou.health/doctors-hate-this-miracle-cure-proven-remedy",
+      "https://wellness-guauk.com/article/ngnxtioq",
+      "https://sciencedirect.com/publications/tuumnobczr"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "easy",
+    "total_reward": 0.455,
+    "terminal_reward": 0.395,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-avnre.com/article/gcuyccuf",
+      "https://eswdyeko.xyz/big-pharma-secret-big-pharma-secret-immune-boost",
+      "https://cdc.gov/publications/guxsuvalyj"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "easy",
+    "total_reward": 0.305,
+    "terminal_reward": 0.245,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/dzoppqdtva",
+      "https://wellness-zywem.com/article/kdaifsfr",
+      "https://ajmoguck.info/big-pharma-secret-detox-protocol-miracle-cure"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 500,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://ugujbxsg.click/natural-healing-gut-flora-reset-gut-flora-reset",
+      "https://wellness-mytyx.com/article/hiqgcntm",
+      "https://nature.com/publications/fcutcfgubt"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-pukpi.com/article/clwpioec",
+      "https://xjgzjygz.info/doctors-hate-this-proven-remedy-miracle-cure",
+      "https://sciencedirect.com/publications/uijsjyljat"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://who.int/publications/bzgnazzxwu",
+      "https://wellness-eouyx.com/article/hfgprlfm",
+      "https://wellness-xtryx.com/article/sumbqrka"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-dorkx.com/article/eudwodhj",
+      "https://wellness-eerzr.com/article/ssygykob",
+      "https://swdvxbfn.click/big-pharma-secret-immune-boost-big-pharma-secret"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nih.gov/publications/bcketcgrlr",
+      "https://zknqlhnc.health/doctors-hate-this-natural-healing-immune-boost",
+      "https://wellness-pmwmn.com/article/mkcskyjg"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-vmdlv.com/article/jtlxqdkw",
+      "https://yihzivoo.health/gut-flora-reset-detox-protocol-proven-remedy",
+      "https://sciencedirect.com/publications/hhwyjojxus"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-rjwfz.com/article/vrownfih",
+      "https://sciencedirect.com/publications/pjytfuxqmr",
+      "https://wellness-dnklc.com/article/gvqrjzos"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-xigaa.com/article/qbxhvqkg",
+      "https://hjwbqray.online/miracle-cure-natural-healing-doctors-hate-this",
+      "https://pubmed.ncbi.nlm.nih.gov/publications/jyqxjsydvx"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-qcpcy.com/article/riwcdgrp",
+      "https://cdc.gov/publications/sfxqxygxwj",
+      "https://pubmed.ncbi.nlm.nih.gov/publications/jcqjxotjow"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-jeckf.com/article/nsnlcccx",
+      "https://dxrscttu.click/big-pharma-secret-natural-healing-natural-healing",
+      "https://cdc.gov/publications/rivfzgmmza"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/ewxqoeswzk",
+      "https://wellness-mlblz.com/article/dazutzxw",
+      "https://wellness-hjonr.com/article/szgpzket"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nih.gov/publications/tfhvdovhcb",
+      "https://wellness-lsyrj.com/article/lnffnujq",
+      "https://wellness-usxfx.com/article/iwrzvabi"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://who.int/publications/ykegatmkns",
+      "https://cdc.gov/publications/vultnkzfem",
+      "https://wellness-txobi.com/article/qnylswpm"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-jiajw.com/article/zyqldhat",
+      "https://who.int/publications/lwikehvlad",
+      "https://wellness-lmfbz.com/article/pszeowqx"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://yfcjztzd.click/gut-flora-reset-detox-protocol-immune-boost",
+      "https://wellness-emwws.com/article/tgqdodeg",
+      "https://wellness-kvsce.com/article/nahrfiyl"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://sciencedirect.com/publications/gydwwprllw",
+      "https://nature.com/publications/mhuvbegimr",
+      "https://wellness-wbfqj.com/article/wfwawour"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-kptgq.com/article/boqnwbxn",
+      "https://wellness-pluix.com/article/ilmwwcxm",
+      "https://hzuilgmh.xyz/immune-boost-immune-boost-detox-protocol"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://qqjrnbub.health/miracle-cure-gut-flora-reset-natural-healing",
+      "https://wellness-makee.com/article/baabbsdp",
+      "https://sciencedirect.com/publications/uobtwxwgkc"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "medium",
+    "total_reward": 0.3067,
+    "terminal_reward": 0.2467,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-vzjho.com/article/wqyyubqs",
+      "https://wellness-xwrsf.com/article/rwmtttwt",
+      "https://nature.com/publications/uxsuvalyjd"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "medium",
+    "total_reward": 0.4567,
+    "terminal_reward": 0.3967,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nih.gov/publications/hvfbkfbkhx",
+      "https://wellness-bsoib.com/article/fqvfffxg",
+      "https://nih.gov/publications/moguckukqr"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 500,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://qvpvmxiy.top/detox-protocol-miracle-cure-doctors-hate-this",
+      "https://journal-gaccbu.org/doi/10.2008/86hs579j",
+      "https://cdc.gov/publications/qsfcutcfgu"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 501,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-vyaosk.org/doi/10.1696/ovmtefas",
+      "https://cfwvjsxj.top/doctors-hate-this-gut-flora-reset-doctors-hate-this",
+      "https://nature.com/publications/qineilsamz"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 502,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-sfaybz.org/doi/10.9308/i81gb88t",
+      "https://journal-wptdzf.org/doi/10.3732/jx4khiwy",
+      "https://wellness-rslag.com/article/ldipjmsi"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 503,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-pstkb.com/article/xnyreudw",
+      "https://beusxxhz.xyz/gut-flora-reset-proven-remedy-gut-flora-reset",
+      "https://who.int/publications/jdqbkdvttm"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 504,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-saxbnh.org/doi/10.3829/oxv80e09",
+      "https://pmzusxlz.click/natural-healing-detox-protocol-proven-remedy",
+      "https://journal-tbmdhk.org/doi/10.9154/bb2j8vrp"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 505,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-rguiy.com/article/xameoboe",
+      "https://ixqntyih.info/proven-remedy-gut-flora-reset-natural-healing",
+      "https://journal-ztjuvi.org/doi/10.4034/tn62z5p9"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 506,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-qnync.com/article/flhhzsik",
+      "https://journal-sqypjy.org/doi/10.1605/xqyf2iys",
+      "https://journal-djjdzs.org/doi/10.6879/xs1s7xni"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 507,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-raauhc.org/doi/10.6453/6tsson7l",
+      "https://wellness-bttef.com/article/aavdgjsp",
+      "https://journal-fvrdea.org/doi/10.8959/yasjl6wf"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 508,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-bedal.com/article/hhpthmal",
+      "https://journal-jqnzis.org/doi/10.1777/x78j74nm",
+      "https://sciencedirect.com/publications/cjcqjxotjo"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 509,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-oxnnje.org/doi/10.7450/3ckga5me",
+      "https://wpvdcdxr.online/miracle-cure-immune-boost-detox-protocol",
+      "https://journal-qtzfoe.org/doi/10.4471/lz6nznih"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 510,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://cdc.gov/publications/cbqixewjth",
+      "https://wellness-emibx.com/article/gnieoibv",
+      "https://journal-tnkwkq.org/doi/10.1943/ji9hrhoi"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 511,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/msspdnxawd",
+      "https://wellness-vmqgl.com/article/jtaxniuc",
+      "https://journal-idqnkc.org/doi/10.4486/lrp0t4jv"
+    ],
+    "ground_truth_verdict": "false",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 512,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/jqufgvcodj",
+      "https://journal-ssoead.org/doi/10.6013/1sp8hfrc",
+      "https://journal-waywhh.org/doi/10.1667/7kh5f1b9"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 513,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://xqvorrcq.health/proven-remedy-proven-remedy-detox-protocol",
+      "https://who.int/publications/rphyasuryo",
+      "https://journal-ckimhv.org/doi/10.7512/p0ja9hd7"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 514,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-yfcjzt.org/doi/10.9006/ex621hb1",
+      "https://chllscvn.info/gut-flora-reset-natural-healing-big-pharma-secret",
+      "https://journal-vinwkf.org/doi/10.6816/wdxdg7b7"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 515,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-uqcova.org/doi/10.3963/wypp4mf0",
+      "https://nature.com/publications/uawnazumky",
+      "https://wellness-jcgkj.com/article/zqxurksw"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 516,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://wellness-mwsvj.com/article/ykptgqhx",
+      "https://journal-clbhla.org/doi/10.9715/n1jhhxvn",
+      "https://cdc.gov/publications/ajhwvnngth"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 517,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://nvtxxedz.online/miracle-cure-doctors-hate-this-miracle-cure",
+      "https://journal-uprcla.org/doi/10.8667/y1jjws6o",
+      "https://journal-rwzklq.org/doi/10.4605/uc0464io"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 518,
+    "difficulty": "hard",
+    "total_reward": 0.3075,
+    "terminal_reward": 0.2475,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://journal-frlrhk.org/doi/10.8503/do39njuz",
+      "https://wellness-igkcp.com/article/pxwrsfmp",
+      "https://cdc.gov/publications/guxsuvalyj"
+    ],
+    "ground_truth_verdict": "unverifiable",
+    "filed_verdict": "true"
+  },
+  {
+    "seed": 519,
+    "difficulty": "hard",
+    "total_reward": 0.4575,
+    "terminal_reward": 0.3975,
+    "steps_used": 4,
+    "visited_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/publications/dzoppqdtva",
+      "https://journal-dgpqzu.org/doi/10.3201/jfg3drkj",
+      "https://journal-ajmogu.org/doi/10.5548/2owy20ix"
+    ],
+    "ground_truth_verdict": "true",
+    "filed_verdict": "true"
+  }
+]
