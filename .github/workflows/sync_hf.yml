@@ -92,3 +92,4 @@ jobs:
           )
           print("Synced to PriyanshuHF/dead-internet-detective-trainer-p2")
           EOF
+# Auto-sync via GitHub Actions to HuggingFace Spaces
