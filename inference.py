@@ -21,7 +21,7 @@ def run_baseline_episode(client: DeadInternetClient, difficulty: str = "easy", s
         r = client.step(session_id, "visit_page", {"url": url})
         total_reward += r["reward"]
         step_num += 1
-        print(f"Step {step_num}: visit_page({url}) → reward={r['reward']:.4f}")
+        print(f"Step {step_num}: visit_page({url}) -> reward={r['reward']:.4f}")
         if r["done"]:
             print("Episode ended early.")
             return r
