@@ -1,0 +1,94 @@
+name: Sync to HuggingFace Spaces
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  sync-environment-space:
+    name: Sync environment Space (AryanJain7031/dead-internet-detective)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push to HF environment Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN_P1 }}
+        run: |
+          pip install -q huggingface_hub
+          python - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.upload_folder(
+              folder_path=".",
+              repo_id="AryanJain7031/dead-internet-detective",
+              repo_type="space",
+              ignore_patterns=[
+                  "*.pyc", "__pycache__", ".git", ".github",
+                  ".claude", "training_space*", "_check.py",
+                  "_dump_log.py", "_phase2_setup.py",
+              ],
+              commit_message=f"sync from GitHub: ${{ github.sha }}"[:72],
+          )
+          print("Synced to AryanJain7031/dead-internet-detective")
+          EOF
+
+  sync-trainer-p1:
+    name: Sync P1 trainer Space (AryanJain7031/dead-internet-detective-trainer)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push training_space/ to HF P1 trainer Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN_P1 }}
+        run: |
+          pip install -q huggingface_hub
+          python - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.upload_folder(
+              folder_path="training_space",
+              repo_id="AryanJain7031/dead-internet-detective-trainer",
+              repo_type="space",
+              ignore_patterns=["*.pyc", "__pycache__"],
+              commit_message=f"sync from GitHub: ${{ github.sha }}"[:72],
+          )
+          print("Synced to AryanJain7031/dead-internet-detective-trainer")
+          EOF
+
+  sync-trainer-p2:
+    name: Sync P2 trainer Space (PriyanshuHF/dead-internet-detective-trainer-p2)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - name: Push training_space_phase2/ to HF P2 trainer Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN_P2 }}
+        run: |
+          pip install -q huggingface_hub
+          python - <<'EOF'
+          import os
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.upload_folder(
+              folder_path="training_space_phase2",
+              repo_id="PriyanshuHF/dead-internet-detective-trainer-p2",
+              repo_type="space",
+              ignore_patterns=["*.pyc", "__pycache__"],
+              commit_message=f"sync from GitHub: ${{ github.sha }}"[:72],
+          )
+          print("Synced to PriyanshuHF/dead-internet-detective-trainer-p2")
+          EOF
