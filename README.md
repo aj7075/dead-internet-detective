@@ -77,7 +77,7 @@ This project trains an LLM agent to investigate synthetic disinformation cases u
 - **Training notebook**: [`notebooks/training_grpo.ipynb`](notebooks/training_grpo.ipynb) *(Colab-ready, GRPO via TRL + Unsloth)*
 - **Trained model (P1)**: [PriyanshuHF/dead-internet-detective-model-p1](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p1)
 - **Trained model (P2)**: [PriyanshuHF/dead-internet-detective-model-p2](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p2)
-- **HF Blog post**: *(link after posting — see below)*
+- **HF Blog / Writeup**: [Dead Internet Detective Space README](https://huggingface.co/spaces/AryanJain7031/dead-internet-detective)
 - **W&B run**: *(fill in after training completes)*
 
 ## API Reference (Live Space)
