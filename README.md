@@ -78,7 +78,7 @@ This project trains an LLM agent to investigate synthetic disinformation cases u
 - **Trained model (P1)**: [PriyanshuHF/dead-internet-detective-model-p1](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p1)
 - **Trained model (P2)**: [PriyanshuHF/dead-internet-detective-model-p2](https://huggingface.co/PriyanshuHF/dead-internet-detective-model-p2)
 - **HF Blog / Writeup**: [Dead Internet Detective Space README](https://huggingface.co/spaces/AryanJain7031/dead-internet-detective)
-- **W&B run**: *(fill in after training completes)*
+- **W&B run**: [dead-internet-detective (P1)](https://wandb.ai/models-srm-institute-of-science-and-technology9361/dead-internet-detective/workspace?nw=nwuseraryanjain7031)
 
 ## API Reference (Live Space)
 
