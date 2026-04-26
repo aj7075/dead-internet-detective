@@ -23,10 +23,10 @@ HF_MODEL_REPO     = os.environ.get("HF_MODEL_REPO", "PriyanshuHF/dead-internet-d
 # Ungated FP16 mirror — quantized on the fly by bitsandbytes
 MODEL_NAME        = os.environ.get("MODEL_NAME", "NousResearch/Meta-Llama-3.1-8B-Instruct")
 SMOKE_TEST        = os.environ.get("SMOKE_TEST", "false").lower() == "true"
-NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 40
-ROLLOUTS_PER_STEP = 2   if SMOKE_TEST else 4
-MAX_EP_STEPS      = 10  if SMOKE_TEST else 12
-MAX_EP_SECS       = 35
+NUM_TRAIN_STEPS   = 10  if SMOKE_TEST else 25
+ROLLOUTS_PER_STEP = 2   if SMOKE_TEST else 2
+MAX_EP_STEPS      = 10  if SMOKE_TEST else 6
+MAX_EP_SECS       = 15
 DIFFICULTIES      = ["easy"] if SMOKE_TEST else ["easy", "medium", "hard"]
 SAVE_PATH         = "./trained_model"
 MAX_SEQ_LENGTH    = 2048
@@ -260,7 +260,7 @@ def run_training():
         num_train_epochs=1,
         per_device_train_batch_size=2,         # must be divisible by num_generations
         num_generations=2,                     # GRPO group size; 2 = minimum signal
-        gradient_accumulation_steps=2,         # effective batch = 2*2 = 4
+        gradient_accumulation_steps=1,         # 2 rollouts, 1 accum = lean + fast
         learning_rate=2e-5,
         logging_steps=1,
         save_steps=50,
